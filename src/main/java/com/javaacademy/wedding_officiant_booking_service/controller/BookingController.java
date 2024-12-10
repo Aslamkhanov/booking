@@ -3,32 +3,30 @@ package com.javaacademy.wedding_officiant_booking_service.controller;
 import com.javaacademy.wedding_officiant_booking_service.booking_dto.BookingCountResponse;
 import com.javaacademy.wedding_officiant_booking_service.booking_dto.BookingDto;
 import com.javaacademy.wedding_officiant_booking_service.booking_service.BookingService;
+import com.javaacademy.wedding_officiant_booking_service.entity_booking.Booking;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/booking")
+@CrossOrigin
 public class BookingController {
     private final BookingService bookingService;
 
-    @GetMapping("/month/{month}/free")
+    @GetMapping("/booking/month/{month}/free")
     public BookingCountResponse getCountBookedDays(@PathVariable int month) {
-      return   bookingService.countBookedDays(month);
+        return bookingService.countBookedDays(month);
     }
 
-    @GetMapping("/month/{month}")
+    @GetMapping("/booking/month/{month}")
     public List<BookingDto> getBookingsByMonth(@PathVariable int month) {
         return bookingService.getBookingInfoMonth(month);
     }
-    @PostMapping
+
+    @PostMapping("/booking")
     public void createBooking(@RequestBody BookingDto bookingDto) {
-            bookingService.saveBookings(bookingDto);
+        bookingService.saveBookings(bookingDto);
     }
 }

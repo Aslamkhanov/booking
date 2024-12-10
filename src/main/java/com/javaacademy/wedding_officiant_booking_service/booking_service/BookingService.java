@@ -22,7 +22,7 @@ public class BookingService {
         return new BookingCountResponse(count);
     }
     public List<BookingDto> getBookingInfoMonth(int month) {
-        return bookingRepository.getBookingInfoMonth(month).stream()
+        return bookingRepository.getBookingMonth(month).stream()
                 .map(bookingMapper::convertDto).collect(Collectors.toList());
     }
     public void saveBookings(BookingDto bookingDto) {

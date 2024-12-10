@@ -5,10 +5,13 @@ import lombok.*;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Booking {
     private Integer month;
     private int day;
     private boolean booked;
+
+    public Booking(Integer month, int day) {
+        this.month = month;
+        this.day = day;
+    }
 }

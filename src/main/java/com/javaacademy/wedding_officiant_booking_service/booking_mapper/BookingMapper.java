@@ -10,6 +10,6 @@ public class BookingMapper {
         return new BookingDto(booking.getMonth(), booking.getDay());
     }
     public Booking convertToEntity(BookingDto bookingDto) {
-        return new Booking(bookingDto.getMonthNumber(), bookingDto.getDayNumber(), true);
+        return new Booking(bookingDto.getMonthNumber(), bookingDto.getDayNumber());
     }
 }

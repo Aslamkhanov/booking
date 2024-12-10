@@ -9,5 +9,5 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BookingCountResponse {
-    private int count;
+    private long count;
 }
