@@ -17,7 +17,4 @@ import java.util.stream.Collectors;
 @Data
 public class StorageBookingInformation {
     private Map<Integer, List<Booking>> data = new HashMap<>();
-    public List<Booking> getMonth(int month) {
-        return data.getOrDefault(month, new ArrayList<>());
-    }
 }

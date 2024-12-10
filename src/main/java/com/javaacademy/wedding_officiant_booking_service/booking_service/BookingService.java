@@ -22,6 +22,7 @@ public class BookingService {
         return new BookingCountResponse(count);
     }
     public List<BookingDto> getBookingInfoMonth(int month) {
+       // return bookingRepository.getBookingMonth(month);
         return bookingRepository.getBookingMonth(month).stream()
                 .map(bookingMapper::convertDto).collect(Collectors.toList());
     }

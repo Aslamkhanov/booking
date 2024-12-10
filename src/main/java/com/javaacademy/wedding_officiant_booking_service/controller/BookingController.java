@@ -5,6 +5,7 @@ import com.javaacademy.wedding_officiant_booking_service.booking_dto.BookingDto;
 import com.javaacademy.wedding_officiant_booking_service.booking_service.BookingService;
 import com.javaacademy.wedding_officiant_booking_service.entity_booking.Booking;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
