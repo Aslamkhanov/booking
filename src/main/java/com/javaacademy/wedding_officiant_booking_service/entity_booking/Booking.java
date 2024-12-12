@@ -1,8 +1,6 @@
 package com.javaacademy.wedding_officiant_booking_service.entity_booking;
 
-import lombok.*;
-
-import java.util.Date;
+import lombok.Data;
 
 @Data
 public class Booking {

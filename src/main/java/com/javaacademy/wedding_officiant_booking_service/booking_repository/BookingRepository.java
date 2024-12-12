@@ -27,7 +27,7 @@ public class BookingRepository {
         booking.setBooked(true);
         List<Booking> bookings = storageBookingInformation.getData()
                 .computeIfAbsent(booking.getMonth(), k -> new ArrayList<>());
-            log.info("Существующие бронирования на {} : {} ",booking.getMonth(), bookings);
+        log.info("Существующие бронирования на {} : {} ", booking.getMonth(), bookings);
         boolean dayExists = bookings.stream().anyMatch(b -> b.getDay() == booking.getDay());
 
         if (!dayExists) {
